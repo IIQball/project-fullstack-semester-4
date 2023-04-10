@@ -1,7 +1,7 @@
-const Tables = ()=> {
+const TableAkunToko = ()=> {
     return(
         <>
-            <div class="overflow-x-auto shadow-md sm:rounded-lg m-0 ml-72 mr-8 mt-9">
+            <div class="overflow-x-auto shadow-md sm:rounded-lg mt-9">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-white uppercase bg-biru dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -82,4 +82,4 @@ const Tables = ()=> {
     );
 }
 
-export default Tables;
+export default TableAkunToko;
