@@ -5,7 +5,7 @@ import Content from "./components/Content"
 const StokBarang = () => {
     return(
         <>
-            <div className="relative min-h-screen grid grid-cols-12 grid-rows-6">
+            <div className="relative min-h-screen grid grid-cols-12 grid-rows-6 box-border">
                 <Header title="Stok Barang"/>
                 <Sidebar/>
                 <Content/>

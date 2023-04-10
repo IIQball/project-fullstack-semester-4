@@ -10,9 +10,10 @@ import './index.css'
 // pages
 import User from './User'
 import StokBarang from './StokBarang'
+import TestState from './TestState'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <StokBarang />
+    <StokBarang/>
   </React.StrictMode>,
 )
