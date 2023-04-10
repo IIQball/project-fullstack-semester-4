@@ -1,7 +1,10 @@
 import { useState } from "react"
 
 const ContentListBarang = () => {
-    
+
+    const [biru, setBiru] = useState ("Beras Ratu Biru 25Kg");
+    const [merah, setMerah] = useState ("Beras Ratu Merah 25Kg");
+    const [hijau, setHijau] = useState ("Beras Ratu Hijau 25Kg");
     return(
         <>
             {/* container */}
@@ -42,16 +45,16 @@ const ContentListBarang = () => {
                                     -
                                 </th>
                                 <td class="px-6 py-4">
-                                    Jubah
+                                    {biru}
                                 </td>
                                 <td class="px-6 py-4">
-                                    Pakaian
+                                    Beras
                                 </td>
                                 <td class="px-6 py-4">
                                     Rp. 300.000
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a onClick={() => setBiru ("Beras Punel Banyuwangi")} href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline">Hapus</a>
@@ -65,16 +68,16 @@ const ContentListBarang = () => {
                                     -
                                 </th>
                                 <td class="px-6 py-4">
-                                    Baju
+                                    {merah}
                                 </td>
                                 <td class="px-6 py-4">
-                                    Pakaian
+                                    Beras
                                 </td>
                                 <td class="px-6 py-4">
                                     Rp. 275.000
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a  href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a onClick={() => setMerah ("Beras Punel Bali")} href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline">Hapus</a>
@@ -88,16 +91,16 @@ const ContentListBarang = () => {
                                     -
                                 </th>
                                 <td class="px-6 py-4">
-                                    Celana
+                                    {hijau}
                                 </td>
                                 <td class="px-6 py-4">
-                                    Pakaian
+                                    Beras
                                 </td>
                                 <td class="px-6 py-4">
                                     Rp. 250.000
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a onClick={() => setHijau ("Beras Punel Jember")} href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline">Hapus</a>
