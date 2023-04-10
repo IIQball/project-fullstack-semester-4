@@ -2,6 +2,7 @@ import { useState } from "react"
 import TabelStokBarang from "./TableStokBarang"
 
 const Content = () => {
+    
     // state data stok
     const [dataStok,setDataStok] = useState([
         {
