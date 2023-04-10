@@ -12,7 +12,7 @@ const Item = (props) => {
                         <h5 class="card-title"> {props.title}</h5>
                         <h5 class="card-title">Rp {props.price}</h5>
                         <h5 class="card-title"> {props.desc}</h5>
-                        <button class="btn btn-success" onClick={() => addItem(props.item)}>Add</button>
+                        <button class="btn btn-primary m-1" onClick={() => addItem(props.item)}>Beli</button>
                     </div>
                 </div>
         </div>
