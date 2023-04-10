@@ -12,7 +12,7 @@ const Content = () => {
                     </select>
 
                     </div>
-                    <a href="#" className="bg-green-300 font-semibold text-white flex p-2 rounded-md"><span className="m-auto"><span className="text-lg">+</span> Stok Barang</span></a>
+                    <a href="#" className="bg-red-400 font-semibold text-white flex p-2 rounded-md"><span className="m-auto"><span className="text-lg">+</span> Stok Barang</span></a>
                 </div>
             </div>
         </>
