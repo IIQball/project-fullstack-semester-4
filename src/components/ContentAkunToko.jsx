@@ -1,10 +1,35 @@
+import { useState } from "react";
 import TableAkunToko from "./TableAkunToko";
 
 const ContentAkunToko = () => {
+
+    // State data akun toko
+    const [dataAkunToko,setDataAkunToko] = useState([
+        {
+            "namatoko" : "TOKO A",
+            "username" : "toko_a",
+            "password" : "1234565"
+        },
+    ])
+
+    // state input data
+    const [NamaToko,setNamaToko] = useState('')
+    const [UserName,setUserName] = useState('')
+    const [Password,setPassword] = useState('')
+
+    // function button tambah akun toko
+    const tambahAkunToko = () => {
+        setDataAkunToko([...dataAkunToko,{"namatoko" : NamaToko, "username" : UserName, "password" : Password}])
+    }
+
+    console.log(dataAkunToko)
+
     return(
         <>
-            {/* Searching */}
+            {/* container */}
             <div className="bg-slate-100 col-span-10 row-span-5 p-5">
+
+                {/* Searching */}
                 <div className=" flex flex-row-reverse justify-center space-x-96 w-full">
                     <div class=" md:order-2 ">
                         <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
@@ -24,30 +49,35 @@ const ContentAkunToko = () => {
                         </button>
                     </div>
                 </div>
+
                 {/* Form */}
                 <form className="mt-9">
                     <div class="mb-6 ">
                         <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Toko</label>
-                        <input type="text" id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nama toko" required/>
+                        <input type="text" value={NamaToko} id="namatoko" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nama toko" required
+                        onChange={(e)=>(setNamaToko(e.target.value))}/>
                     </div>
                     <div class="mb-6 ">
                         <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                        <input type="text" id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="username" required/>
+                        <input type="text" value={UserName} id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="username" required
+                        onChange={(e)=>(setUserName(e.target.value))}/>
                     </div>
                     <div class="mb-6">
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                        <input type="password" value={Password} id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="username" required
+                        onChange={(e)=>(setPassword(e.target.value))}/>
                     </div>
 
                     <div className="m-0 mr-20 ">
                         <button 
                             type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 "
+                            onClick={tambahAkunToko}
                         >
                             Buat Akun Toko
                         </button>
                     </div>
                 </form>
-                <TableAkunToko/>
+                <TableAkunToko dataAkunToko = {dataAkunToko}/>
             </div>
         </>
     )

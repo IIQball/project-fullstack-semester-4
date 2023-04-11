@@ -12,6 +12,6 @@ import AkunToko from './AkunToko'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <StokBarang/>
+    <AkunToko/>
   </React.StrictMode>,
 )
