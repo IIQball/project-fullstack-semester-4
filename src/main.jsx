@@ -14,6 +14,6 @@ import ListBarang from './ListBarang'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ListBarang/>
-  </React.StrictMode>
+    <AkunToko/>
+  </React.StrictMode>,
 )

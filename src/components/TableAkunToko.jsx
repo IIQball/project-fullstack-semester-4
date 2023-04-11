@@ -1,8 +1,8 @@
-const TableAkunToko = ()=> {
+const TableAkunToko = ({dataAkunToko})=> {
     return(
         <>
-            <div class="overflow-x-auto shadow-md sm:rounded-lg mt-9">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <div className="overflow-x-auto shadow-md sm:rounded-lg mt-9">
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-white uppercase bg-biru dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
@@ -23,58 +23,26 @@ const TableAkunToko = ()=> {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <th class="px-6 py-4" >
-                                1
-                            </th>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                TOKO A
-                            </th>
-                            <td class="px-6 py-4">
-                                toko_a
+                        {dataAkunToko.map((data,idx)=> (
+                            <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <td class="px-6 py-4" >
+                                {idx+1}
+                            </td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {data.namatoko}
                             </td>
                             <td class="px-6 py-4">
-                                **********
+                                {data.username}
                             </td>
-                            <td class="px-6 py-4">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
-                        <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                        <th class="px-6 py-4" >
-                                2
-                            </th>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                TOKO B
-                            </th>
-                            <td class="px-6 py-4">
-                                toko_b
-                            </td>
-                            <td class="px-6 py-4">
-                                **********
+                            <td class="px-6 py-4 ">
+                                <input type="password" value={data.password} readOnly className="focus:outline-none fa-solid fa-lock "/>
                             </td>
                             <td class="px-6 py-4">
                                 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                             </td>
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                        <th class="px-6 py-4" >
-                                3
-                            </th>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                TOKO C
-                            </th>
-                            <td class="px-6 py-4">
-                                toko_c
-                            </td>
-                            <td class="px-6 py-4">
-                                **********
-                            </td>
-                            <td class="px-6 py-4">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
-                       
+                        ))}
+                        
                     </tbody>
                 </table>
             </div>
