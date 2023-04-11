@@ -12,7 +12,7 @@ const Cart = () => {
         removeItem,
         emptyCart,
     } = useCart();
-    if(isEmpty) return <h1>keranjang anda kososng</h1>
+    if(isEmpty) return <h1>keranjang anda kosong</h1>
     return (
         <div className="bg-slate-100 col-span-12 row-span-5 p-5">
         <section className="">
