@@ -1,6 +1,6 @@
-import Header from "./components/Header"
-import Sidebar from "./components/Sidebar"
-import ContentAkunToko from "./components/ContentAkunToko"
+import Header from "../components/Header"
+import Sidebar from "../components/Sidebar"
+import ContentAkunToko from "../components/ContentAkunToko"
 
 const StokBarang = () => {
     return(
