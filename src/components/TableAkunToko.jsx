@@ -1,4 +1,4 @@
-const TableAkunToko = ({dataAkunToko})=> {
+const TableAkunToko = ()=> {
     return(
         <>
             <div className="overflow-x-auto shadow-md sm:rounded-lg mt-9">
@@ -23,26 +23,25 @@ const TableAkunToko = ({dataAkunToko})=> {
                         </tr>
                     </thead>
                     <tbody>
-                        {dataAkunToko.map((data,idx)=> (
-                            <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <td class="px-6 py-4" >
-                                {idx+1}
-                            </td>
-                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {data.namatoko}
-                            </td>
-                            <td class="px-6 py-4">
-                                {data.username}
-                            </td>
-                            <td class="px-6 py-4 ">
-                                <input type="password" value={data.password} readOnly className="focus:outline-none fa-solid fa-lock "/>
-                            </td>
-                            <td class="px-6 py-4">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
-                        ))}
                         
+                    <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <td class="px-6 py-4" >
+                            <p>1</p>
+                        </td>
+                        <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <p>Toko A</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p>toko_a</p>
+                        </td>
+                        <td class="px-6 py-4 ">
+                            <p>********</p>
+                            {/* <input type="password"  className="focus:outline-none fa-solid fa-lock "/> */}
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

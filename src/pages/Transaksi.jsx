@@ -1,8 +1,8 @@
-import Header from "./components/Header"
-import Sidebar from "./components/Sidebar"
-import Shop from "./components/Shop"
+import Header from "../components/Header"
+import Sidebar from "../components/Sidebar"
+import Shop from "../components/Shop"
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import ContentTransaksi from "./components/ContentTransaksi"
+import ContentTransaksi from "../components/ContentTransaksi"
 import { CartProvider } from "react-use-cart";
 
 
