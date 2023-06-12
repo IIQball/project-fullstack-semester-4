@@ -1,5 +1,4 @@
 import AdminLayout from "../components/layout/AdminLayout"
-import Content from "../components/Content"
 import TabelStock from "../components/StokBarang/TabelStock"
 
 const StokBarang = () => {
