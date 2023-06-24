@@ -6,7 +6,7 @@ import StockBarang from  './pages/StokBarang'
 function App() {
   return (
     <Routes>
-      <Route path='/' element = {<StockBarang />} />
+      <Route path='/:idUser/stok-barang' element = {<StockBarang />} />
     </Routes>
   )
 }
