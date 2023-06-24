@@ -20,7 +20,34 @@ const StokBarang = () => {
             "harga" : 50000,
             "jumlah" : 50,
             "gambar" : "img1.jpeg"
-        }
+        },
+        {
+            "toko" : "Toko A",
+            "idProduk" : "B01",
+            "namaBarang" : "Kaos Polos",
+            "ukuran" : "L",
+            "harga" : 50000,
+            "jumlah" : 50,
+            "gambar" : "img1.jpeg"
+        },
+        {
+            "toko" : "Toko A",
+            "idProduk" : "B01",
+            "namaBarang" : "Kaos Polos",
+            "ukuran" : "L",
+            "harga" : 50000,
+            "jumlah" : 50,
+            "gambar" : "img1.jpeg"
+        },
+        {
+            "toko" : "Toko A",
+            "idProduk" : "B01",
+            "namaBarang" : "Kaos Polos",
+            "ukuran" : "L",
+            "harga" : 50000,
+            "jumlah" : 50,
+            "gambar" : "img1.jpeg"
+        },
     ]
 
     return(
