@@ -2,18 +2,22 @@ const TambahStok = () => {
     return(
         <div>
             <nav className="flex items-center justify-between flex-wrap bg-teal p-8 bg-biru">
-                <div className="flex items-center flex-no-shrink text-white mr-6">
-                    <svg className="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-                    <span className="font-semibold text-xl tracking-tight">DISTRO OUTFIT</span>
+                <div className="flex items-center flex-no-shrink text-white mr-6 ">
+                    <img src='/src/img/logo-toko.jpg'
+                                    className='w-16 h-w-16 rounded-md'
+                                />
+                    <span className="font-semibold text-xl tracking-tight ml-5">DISTRO OUTFIT</span>
                 </div>
                 
                 <div className="text-white flex items-center justify-between ">
-                    <p className="p-4 text-2xl">Akun_Toko</p>
-                    <img src="/src/img/account.png" alt="" />
+                    <p className="p-4 text-xl">Akun_Toko</p>
+                    <div className='bg-white flex items-center justify-center p-1 rounded-full'>
+                        <img src='https://img.icons8.com/material-sharp/48/user.png'
+                        className='w-6 h-w-6'/>
+                    </div>
                 </div>
             </nav>
         </div>
     )
 }
-
 export default TambahStok;
