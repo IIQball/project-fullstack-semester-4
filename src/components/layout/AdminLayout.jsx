@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 const AdminLayout = ({children}) => {
     return(
@@ -23,7 +23,7 @@ const AdminLayout = ({children}) => {
                     
                     <ul className="space-y-2 font-medium">
                         <li>
-                        <Link to="/" className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <Link to="/akun-toko" className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
                             <img src='https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/EBEBEB/external-user-interface-kiranshastry-solid-kiranshastry-1.png'
                                 className='w-6 h-6'
                                 />
@@ -76,4 +76,4 @@ const AdminLayout = ({children}) => {
         </>
     )
 }
-export default AdminLayout
+export default AdminLayout;
