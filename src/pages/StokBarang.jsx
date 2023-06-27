@@ -1,28 +1,25 @@
+import { useEffect, useState } from "react"
 import AdminLayout from "../components/layout/AdminLayout"
-import Content from "../components/Content"
 import TabelStock from "../components/StokBarang/TabelStock"
+import apis from "../api/stockBarang"
+import { useParams } from "react-router-dom"
 
 const StokBarang = () => {
-    const dataStock = [
-        {
-            "toko" : "Toko A",
-            "idProduk" : "B01",
-            "namaBarang" : "Kaos Polos",
-            "ukuran" : "L",
-            "harga" : 50000,
-            "jumlah" : 50,
-            "gambar" : "img1.jpeg"
-        },
-        {
-            "toko" : "Toko A",
-            "idProduk" : "B01",
-            "namaBarang" : "Kaos Polos",
-            "ukuran" : "L",
-            "harga" : 50000,
-            "jumlah" : 50,
-            "gambar" : "img1.jpeg"
-        }
-    ]
+
+    const [dataStock, setDataStock] = useState([]);
+    const { idUser } = useParams();
+
+    useEffect(() => {
+        const fetchData = async() => {
+            try{
+                let response = await apis.getAllStock(idUser);
+                setDataStock(response.data);
+            }catch(err){
+                console.log(err.message);
+            }
+        };
+        fetchData();
+    }, []);
 
     return(
         <>
