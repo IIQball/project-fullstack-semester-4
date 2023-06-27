@@ -1,17 +1,29 @@
 import React, { useEffect } from "react";
 // import Item from "./Item";
 import Data from "./Data";
-import { CartProvider, useCart } from "react-use-cart";
+import { CartProvider, useCart, useState } from "react-use-cart";
 import ContentTransaksi from './ContentTransaksi';
 const Home = () => {
     const { addItem, items} = useCart();
-    console.log(items)
-    useEffect(() => {}, [items])
+    const [dataStock, setDataStock] = useState([]);
+    const { idUser } = useParams();
+
+    useEffect(() => {
+        const fetchData = async() => {
+            try{
+                let response = await apis.getAllStock(idUser);
+                setDataStock(response.data);
+            }catch(err){
+                console.log(err.message);
+            }
+        };
+        fetchData();
+    }, []);
     return(
         <div className="bg-slate-200 p-5">
             <div className="flex justify-between">
                 <div className="border-2 border-gray-200 w-[750px] grid grid-cols-4 overflow-hidden gap-3"> 
-                {Data.map((item) => (
+                {dataStock.map((item) => (
                     <div key={item.id}>                         
                         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
                         <a href="#">
