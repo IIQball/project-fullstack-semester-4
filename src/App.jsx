@@ -8,6 +8,7 @@ import LoginAplikasiKasir from './pages/LoginAplikasiKasir';
 import BuatAkunBaru from './pages/BuatAkunBaru';
 import BuatAkunToko from './pages/BuatAkunToko';
 import TambahStok from './pages/TambahStok';
+import AddStock from './pages/AddStock';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path='/buat-akun-baru' element={ <BuatAkunBaru/> }/>
         <Route path='/buat-akun-toko' element={ <BuatAkunToko/> }/>
         <Route path='/tambah-stok' element={ <TambahStok/> }/>
-        <Route path='/' element = {<StockBarang />} />
+        <Route path='/:idUser/stok-barang' element = {<StockBarang />} />
+        <Route path='/add-stock' element = {<AddStock />} />
       </Routes>
     </>
   )
