@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCart } from "react-use-cart";
 
 const Cart = () => {
@@ -12,46 +12,38 @@ const Cart = () => {
         removeItem,
         emptyCart,
     } = useCart();
-    if(isEmpty) return <h1>keranjang anda kosong</h1>
+    if(isEmpty) return <h1 className="font-medium">keranjang anda kosong</h1>
     return (
-        <div className="bg-slate-100 col-span-12 row-span-5 p-5">
-        <section className="">
-            <div className="col flex-content-center">
-                <div className="d-flex p-5 ml-10">
-                    {/* <center><h5>Belanja ({totalUniqueItems}), Total items:({totalItems})</h5></center> */}
-                    <table className="table table-light table-hover ml-10">
-                       <tbody> 
-                        {/* map berfungsi mebciptakan array dengan memanggil fungsi spesifik pada setiap item  */}
-                            {items.map((item, index)=>{     
-                                return (
-                                    // key berfungsi mengidentifikasi item mana yang telah diubah, ditambahkan atau dihilangkan
-                                    <tr key={index}>    
-                                        <td>
-                                            <img src={item.img} style={{height: '6rem'}}></img>
-                                        </td>
-                                        <td>{item.title}</td>
-                                        <td>{item.price}</td>
-                                        <td>Quantity({item.quantity})</td>
-                                        <td>
-                                            <button className="btn btn-primary m-1 " onClick={() => updateItemQuantity(item.id, item.quantity -1)}>-</button>
-                                            <button className="btn btn-primary m-1 " onClick={() => updateItemQuantity(item.id, item.quantity +1)}>+</button>
-                                            <button className="btn btn-danger ms-2 " onClick={() => removeItem(item.id)}>Remove Item</button>
-                                        </td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
-                </div>
-                <div className="d-flex flex-row-reverse">
-                    <h2>Total price: Rp{cartTotal}</h2>
-                </div>
-                <div className="d-flex flex-row-reverse">
-                    <button className="btn btn-danger m-2" onClick={() => emptyCart()}>hapus</button>
-                    <button className="btn btn-primary m-1">Bayar sekarang</button>
+        <div className="bg-white p-5">
+            <div className=" text-gray-900 divide-y divide-gray-200 dark:text-black dark:divide-gray-700">
+                <div className="flex flex-col">
+                    <div className="flex">
+                        <table className="table-auto">
+                        {/* <h1 className="font-extrabold mb-3">Cek Pesanan</h1> */}
+                            <tbody> 
+                                {items.map((item, index)=>{     
+                                    return (
+                                        <tr key={index} className="text-lg">    
+                                            <td className="pr-5 pl-10 font-bold">{item.title}</td>
+                                            <button className="bg-blue-900 text-white px-2 py-1 rounded-full" onClick={() => updateItemQuantity(item.id, item.quantity -1)}>-</button>
+                                            <td className="pr-5 pl-5 font-bold" >({item.quantity})</td>
+                                            <button className="bg-blue-900 text-white px-2 py-1 rounded-full " onClick={() => updateItemQuantity(item.id, item.quantity +1)}>+</button>
+                                            <td className="pl-5 font-bold">Rp. {item.price}</td>
+                                        </tr>
+                                    )
+                                    })}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="ml-28 mt-10 text-2xl"> {/* Mengatur posisi sebelah kanan */}
+                        <h2 className="font-bold">Total price: Rp{cartTotal}</h2>
+                    </div>
+                    <div className="ml-36 mt-5 font-semibold"> {/* Mengatur posisi sebelah kanan */}
+                        <button className="bg-blue-900 text-white px-2 py-1 mr-2" onClick={() => emptyCart()}>hapus</button>
+                        <button className="bg-blue-900 text-white px-2 py-1">Bayar sekarang</button>
+                    </div>
                 </div>
             </div>
-        </section>
         </div>
     )
 }
