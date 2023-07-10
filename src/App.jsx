@@ -2,18 +2,21 @@ import { Route, Routes } from 'react-router-dom'
 
 // pages
 import StockBarang from  './pages/StokBarang'
-import AkunToko from './pages/AkunToko';
+import Transaksi from './pages/Transaksi'
 import UserLogin from './pages/UserLogin';
 import LoginAplikasiKasir from './pages/LoginAplikasiKasir';
 import BuatAkunBaru from './pages/BuatAkunBaru';
-import BuatAkunToko from './pages/BuatAkunToko';
 import TambahStok from './pages/TambahStok';
 import AddStock from './pages/AddStock';
+import LoginKasir from './pages/LoginKasir';
+import AkunToko from './pages/AkunToko';
+import BuatAkunToko from './pages/BuatAkunToko';
 
 function App() {
   return (
     <>
       <Routes>
+        <Route path='/:idUser/transaksi' element = {<Transaksi/>} />
         <Route path='/akun-toko' element={ <AkunToko/> }/>
         <Route path='/user-login' element={ <UserLogin/> }/>
         <Route path='/login-aplikasi-kasir' element={ <LoginAplikasiKasir/> }/>

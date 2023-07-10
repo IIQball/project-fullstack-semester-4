@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
-import TableAkunToko from "../components/TableAkunToko";
+import TableAkunToko from "../components/TabelAkunToko";
 import AdminLayout from "../components/layout/AdminLayout";
-// import Popup from "../components/awas"
-
+import { Link } from "react-router-dom";
 
 const AkunToko = () => {
     const dataAkunToko =[
@@ -30,7 +28,13 @@ const AkunToko = () => {
                             Buat Akun Toko
                         </button>
                         </Link>
-                        
+                        <Link to="/1/login-aplikasi-kasir">
+                        <button type="submit" className=" text-white bg-[#2A628F] bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium 
+                        rounded-full text-md px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        >
+                            Login aplikasi kasir
+                        </button>
+                        </Link>
                     </div>
                     <TableAkunToko dataAkunToko={dataAkunToko}/>
                     
