@@ -14,6 +14,10 @@ import BuatAkunToko from './pages/BuatAkunToko';
 import EditStok from './pages/EditStok'
 import NewStokBarang from './pages/NewStokBarang'
 
+import BuatTambahBarang from './components/BuatTambahBarang'
+import BuatEditBarang from './components/BuatEditBarang'
+import ListBarang from './pages/ListBarang'
+
 function App() {
   return (
     <>
@@ -29,6 +33,10 @@ function App() {
       <Route path='/:idUser/new-stok-barang' element = {<NewStokBarang />} />
       <Route path='/:idUser/edit-stok' element = {<EditStok />} />
         <Route path='/add-stock' element = {<AddStock />} />
+
+        <Route path='/list-barang' element={ <ListBarang/> }/>
+        <Route path='/tambah-barang' element={ <BuatTambahBarang/> }/>
+        <Route path='/edit-barang' element={ <BuatEditBarang/> }/>
       </Routes>
     </>
   )
