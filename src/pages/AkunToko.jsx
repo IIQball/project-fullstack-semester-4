@@ -37,8 +37,11 @@ const AkunToko = () => {
                         </Link>
                     </div>
                     <TableAkunToko dataAkunToko={dataAkunToko}/>
+                    
                 </div>
             </AdminLayout>
+            
+            
         </>
     )
 }

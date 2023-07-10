@@ -6,6 +6,7 @@ const api = axios.create({
 });
 
 const apis = {
+    
     login: (data) => api.post('/login',data),
     register: (data) => api.post('/register',data),
     logout: () => api.get('logout')

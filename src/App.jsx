@@ -14,19 +14,19 @@ import BuatAkunToko from './pages/BuatAkunToko';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/:idUser/transaksi' element = {<Transaksi/>} />
-      <Route path='/akun-toko' element={ <AkunToko/> }/>
-      <Route path='/user-login' element={ <UserLogin/> }/>
-      <Route path='/login-kasir' element={ <LoginKasir/> }/>
-      <Route path='/:idUser/login-aplikasi-kasir' element={ <LoginAplikasiKasir/> }/>
-      <Route path='/buat-akun-baru' element={ <BuatAkunBaru/> }/>
-      <Route path='/:idUser/akun-toko' element = {<StockBarang />} />
-      <Route path='/tambah-stok' element={ <TambahStok/> }/>
-      <Route path='/:idUser/stok-barang' element = {<StockBarang />} />
-      <Route path='/:idUser/buat-akun-toko' element = {<BuatAkunToko />} />
-      <Route path='/add-stock' element = {<AddStock />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path='/:idUser/transaksi' element = {<Transaksi/>} />
+        <Route path='/akun-toko' element={ <AkunToko/> }/>
+        <Route path='/user-login' element={ <UserLogin/> }/>
+        <Route path='/login-aplikasi-kasir' element={ <LoginAplikasiKasir/> }/>
+        <Route path='/buat-akun-baru' element={ <BuatAkunBaru/> }/>
+        <Route path='/:idUser/buat-akun-toko' element={ <BuatAkunToko/> }/>
+        <Route path='/tambah-stok' element={ <TambahStok/> }/>
+        <Route path='/:idUser/stok-barang' element = {<StockBarang />} />
+        <Route path='/add-stock' element = {<AddStock />} />
+      </Routes>
+    </>
   )
 }
 
