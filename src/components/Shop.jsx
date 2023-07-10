@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Cart from "./ContentTransaksi";
-import Data from "./Data";
-import Item from "./Item";
 import { useParams } from "react-router-dom";
 import apis from "../api/stockBarang"
 import apist1 from "../api/transaksi";
@@ -98,7 +96,7 @@ const Home = () => {
           ))}
         </div>
         <div className="border-2 border-gray-200 w-[550px]">
-          <Cart items={items} setItems={setItems} dataStock={dataStock} setDataStock={setDataStock}/>
+          <Cart items={items} setItems={setItems} dataStock={dataStock} setDataStock={setDataStock} idUser={idUser}/>
         </div>
       </div>
     </div>
