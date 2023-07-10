@@ -8,6 +8,7 @@ const StokBarang = () => {
 
     const [dataStock, setDataStock] = useState([]);
     const { idUser } = useParams();
+    console.log(dataStock)
 
     useEffect(() => {
         const fetchData = async() => {

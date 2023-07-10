@@ -25,6 +25,7 @@ const Data = [
             title : 'Celana pendek',
             desc :'',
             price:100000,
+            quantity:5
 
         },
         {
@@ -33,6 +34,7 @@ const Data = [
             title : 'Jaket',
             desc :'',
             price:300000,
+            quantity:5
 
         },
         {
@@ -41,6 +43,7 @@ const Data = [
             title : 'Kaos Olahraga',
             desc :'',
             price:60000,
+            quantity:5
 
         },
         {
@@ -49,6 +52,7 @@ const Data = [
             title : 'Kaos Olahraga',
             desc :'',
             price:60000,
+            quantity:5
 
         },
         {
@@ -57,6 +61,7 @@ const Data = [
             title : 'Kaos Olahraga',
             desc :'',
             price:60000,
+            quantity:5
 
         },
         {

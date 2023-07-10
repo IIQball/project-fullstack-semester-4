@@ -1,17 +1,16 @@
 import AdminLayout from "../components/layout/AdminLayout";
 import Shop from "../components/Shop"
 import ContentTransaksi from "../components/ContentTransaksi"
-import { CartProvider } from "react-use-cart";
 import Item from "../components/Item";
+import { CartProvider } from "react-use-cart";
 // import Header from "../components/Header";
 
 const Transaksi = () => {
     return(
-        <>
-            <CartProvider>
-                {/* <Header/> */}
+        <>  <header></header>
+            <AdminLayout>
                 <Shop />
-            </CartProvider>
+            </AdminLayout>
         </>
     )
 }
