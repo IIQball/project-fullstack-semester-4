@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import TableAkunToko from "../components/TableAkunToko";
 import AdminLayout from "../components/layout/AdminLayout";
-
 const AkunToko = () => {
     return(
         <>
@@ -26,5 +25,4 @@ const AkunToko = () => {
         </>
     )
 }
-
 export default AkunToko;
