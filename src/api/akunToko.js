@@ -6,7 +6,8 @@ const api = axios.create({
 });
 
 const apis = {
-    regAkunToko : (dataAkun) => api.post("http://localhost:5000/register", dataAkun)
+    regAkunToko : (dataAkun) => api.post("/akuntoko/register", dataAkun),
+    login : (dataAkun) => api.post("/akuntoko/login", dataAkun)
 }
 
 export default apis;

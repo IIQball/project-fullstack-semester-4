@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Item from "./Item";
-import apis from "../api/stockBarang";
 import apist from "../api/transaksiBaru";
-import apist1 from "../api/transaksi";
 
 
 const Cart = ({ items, setItems, dataStock}) => {

@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 const apist1 = {
-    kurangiStok: (kodeBarang) => api.put('/transaksi/' + kodeBarang),
+    kurangiStok: (kodeBarang, idUser) => api.put('/transaksi/' + kodeBarang, idUser),
 };
 
 export default apist1;
