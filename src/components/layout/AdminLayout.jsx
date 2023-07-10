@@ -1,6 +1,7 @@
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom'
 
 const AdminLayout = ({children}) => {
+    const { idUser } = useParams();
     return(
         <>
             <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ml-3 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600">
@@ -9,7 +10,7 @@ const AdminLayout = ({children}) => {
                 <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" />
                 </svg>
             </button>
-            <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+            <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 object-right" aria-label="Sidebar">
                 <div className="h-full px-3 py-4 overflow-y-auto bg-gray-800">
                     <div>
                         <div className='flex items-center text-white font-medium text-xl mb-3'>
@@ -39,12 +40,12 @@ const AdminLayout = ({children}) => {
                         </a>
                         </li>
                         <li>
-                        <a href="#" className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <Link to={`/${idUser}/new-stok-barang`} className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
                             <img src='https://img.icons8.com/external-phatplus-solid-phatplus/64/EBEBEB/external-stock-shipping-phatplus-solid-phatplus.png'
                                 className='w-6 h-6'
                             />
                             <span className="flex-1 ml-3 whitespace-nowrap">Stock</span>
-                        </a>
+                        </Link>
                         </li>
                         <li>
                         <a href="#" className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
@@ -70,7 +71,7 @@ const AdminLayout = ({children}) => {
                     </div>
                 </div>
             </aside>
-            <div className="p-4 sm:ml-64">
+            <div className=" sm:ml-64">
                 {children}
             </div>
         </>

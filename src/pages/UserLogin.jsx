@@ -37,7 +37,6 @@ const UserLogin = () => {
     return(
         <div className= "fixed top-0 left-0 w-full h-full bg-gambar bg-no-repeat bg-center bg-cover">
             <div className="flex bg-biru  w-[1050px] py-10 m-auto mt-52">
-                {/* Form Login */}
                 <div className="p-10 ">
                     <h1 className="text-lg font-bold leading-tight tracking-tight text-white md:text-4xl mb-11 ml-36">
                         User Login
