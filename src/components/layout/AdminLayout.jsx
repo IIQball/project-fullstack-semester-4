@@ -1,6 +1,7 @@
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom'
 
 const AdminLayout = ({children}) => {
+    const { idUser } = useParams();
     return(
         <>
             <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ml-3 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600">
@@ -39,12 +40,12 @@ const AdminLayout = ({children}) => {
                         </a>
                         </li>
                         <li>
-                        <a href="#" className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <Link to={`/${idUser}/new-stok-barang`} className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
                             <img src='https://img.icons8.com/external-phatplus-solid-phatplus/64/EBEBEB/external-stock-shipping-phatplus-solid-phatplus.png'
                                 className='w-6 h-6'
                             />
                             <span className="flex-1 ml-3 whitespace-nowrap">Stock</span>
-                        </a>
+                        </Link>
                         </li>
                         <li>
                         <a href="#" className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
@@ -70,7 +71,7 @@ const AdminLayout = ({children}) => {
                     </div>
                 </div>
             </aside>
-            <div className="p-4 sm:ml-64">
+            <div className=" sm:ml-64">
                 {children}
             </div>
         </>
