@@ -6,7 +6,7 @@ const api = axios.create({
 });
 
 const apis = {
-    regAkunToko : (dataAkun) => api.post("/akuntoko/register", dataAkun),
+    regAkunToko : (idUser,dataAkun) => api.post(`/${idUser}/akuntoko/register`, dataAkun),
     login : (dataAkun) => api.post("/akuntoko/login", dataAkun)
 }
 

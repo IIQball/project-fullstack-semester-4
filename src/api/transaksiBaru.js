@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 const apist = {
-    insertTransaksi: (data) => api.post('/transaksi',data),
+    insertTransaksi: (idUser,data) => api.post(`/${idUser}/transaksi`,data),
 };
 
 export default apist;

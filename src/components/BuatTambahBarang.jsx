@@ -1,41 +1,19 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import apis from "../api/stockBarang";
 
 const BuatTambahBarang = () => {
+    const {idUser} = useParams();
     const [kodeBarang, setKode] = useState("");
-    // State menyimpan nilai kode barang (menyimpan nilai saat ini). 
-    // Fungsi setKode akan digunakan untuk memperbarui nilai kodeBarang (mengubah nilai state)
     const [namaBarang, setNama] = useState("");
     const [harga, setHarga] = useState("");
     const [gambar, setGambar] = useState("");
     const [ukuran, setUkuran] = useState("");
+    const [listToko, setListToko] = useState([]);
+    const [idtoko, setIdToko] = useState("");
     const navigate = useNavigate();
-
-    // const Kirim = async(e) => {
-    //     e.preventDefault();
-
-    //     if (!kodeBarang || !namaBarang || !harga  || !ukuran) {
-    //         alert("Data Masih Ada Yang Kosong")
-    //     }
-
-    //     else {
-    //         try {
-    //             await axios.post("http://localhost:5000/barang",{
-    //                 kodeBarang : kodeBarang,
-    //                 namaBarang : namaBarang,
-    //                 harga : harga,
-    //                 gambar : gambar,
-    //                 ukuran : ukuran
-    //             });
-    //             navigate("/list-barang");
-    //             alert("Barang Berhasil Ditambahkan")
-    //         } catch (error) {
-    //             console.log
-    //         }
-    //     }
-    // }
 
     const Kirim = async(e) => {
         e.preventDefault();
@@ -46,23 +24,23 @@ const BuatTambahBarang = () => {
         }
 
         const formData = new FormData();
-        //mengumpulkan data yang akan dikirim dalam permintaan
         formData.append("kodeBarang", kodeBarang);
         formData.append("namaBarang", namaBarang);
         formData.append("harga", harga);
         formData.append("gambar", gambar);
         formData.append("ukuran", ukuran);
-        // append mengumpulan dan menambahkanke objek formdata
+        formData.append("idToko", idtoko);
+        
+        const newStok = {"idToko": idtoko, "kodeBarang": kodeBarang}
         try {
-            await axios.post("http://localhost:5000/barang", formData, {
-                // axios digunakan untuk melakukan permintaan ke server.
-                // await digunakan untuk menunggu respon dari permintaan server
+            await axios.post(`http://localhost:5000/${idUser}/barang`, formData, {
                 headers:{
                     "Content-Type" : "multipart/form-data"
-                    //digunakan saat mengirimkan file atau form data yang kompleks
                 }
             });
-            navigate("/list-barang");
+            await axios.post(`http://localhost:5000/${idUser}/add-stok`, newStok)
+
+            navigate(`/${idUser}/list-barang`);
             alert("Barang Berhasil Ditambahkan")
         } catch (error) {
             console.log(error);
@@ -75,6 +53,24 @@ const BuatTambahBarang = () => {
         setGambar(image);
         // gambar disimpan dalam state gambar melalui setgambar
     };
+
+    const fetchData = async() => {
+        try{
+            let resListToko = await apis.getListToko(idUser);
+            setListToko(resListToko.data);
+            setIdToko(resListToko.data[0].idToko)
+        }catch(err){
+            console.log(err.message);
+        }
+    };
+
+    useEffect(()=>{
+        try{
+            fetchData();
+        }catch(err){
+            console.log(err)
+        }
+    },[])
 
     return(
         <div className= "fixed top-0 left-0 w-full h-full bg-gambar2 bg-no-repeat bg-center bg-cover">
@@ -105,6 +101,20 @@ const BuatTambahBarang = () => {
                             value={namaBarang} onChange={(e) => setNama(e.target.value)} 
                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm
                             rounded-lg focus:ring-primary-600 focus:border-primary-600 w-80 h-10  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""/>
+
+                            <label htmlFor="nama" className="mt-3 block text-lg font-medium text-white dark:text-white"
+                            >
+                                Toko 
+                            </label>
+                            <select name="toko" onChange={(e) => {setIdToko(e.target.value)}}
+                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm
+                            rounded-lg focus:ring-primary-600 focus:border-primary-600 w-80 h-10  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                {listToko.map((item,idx) => {
+                                    return(
+                                        <option value={item.idToko}>{item.namaToko}</option>
+                                    )
+                                })}
+                            </select>
 
                             <label htmlFor="harga" className="mt-3 block text-lg font-medium text-white dark:text-white"
                             >
@@ -137,7 +147,7 @@ const BuatTambahBarang = () => {
 
                         <div className="flex flex-row">
 
-                            <Link to="/list-barang">
+                            <Link to={`/${idUser}/list-barang`}>
                             <button type="submit" className=" w-full  text-white bg-red-700 hover:bg-red-600 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium 
                             rounded-full text-md px-12 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                 Kembali

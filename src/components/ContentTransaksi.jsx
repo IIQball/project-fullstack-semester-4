@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import apist from "../api/transaksiBaru";
 
 
-const Cart = ({ items, setItems, dataStock}) => {
+const Cart = ({ items, setItems, dataStock, idUser}) => {
   
   const calculateTotalPrice = () => {
     let totalPrice = 0;
@@ -13,9 +13,11 @@ const Cart = ({ items, setItems, dataStock}) => {
   };
   const tambahtransaksi = async () => {
     
-    await apist.insertTransaksi({
+    await apist.insertTransaksi(idUser,{
       data : items
     })
+    alert('Transaksi Sukses');
+    location.reload();
   }
   const kurang = (item) => {
     const updatedItems = items.map((i) => {

@@ -24,6 +24,7 @@ const Home = () => {
 
     if(!check){
     const dino = {
+      "idToko" : data.idToko,
       "namaToko" : data.namaToko,
       "kodeBarang" : data.kodeBarang,
       "namaBarang" : data.namaBarang,
@@ -66,7 +67,7 @@ const Home = () => {
       <div className="flex justify-between">
         <div className="border-2 border-gray-200 w-[750px] grid grid-cols-4 overflow-hidden gap-3">
           {dataStock.map((data) => (
-              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
                 <a href="#">
                   <img className="p-8 rounded-t-lg" src={`/src/img/img1.jpeg`}  />
                 </a>

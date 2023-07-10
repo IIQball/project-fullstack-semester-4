@@ -7,7 +7,6 @@ import UserLogin from './pages/UserLogin';
 import LoginAplikasiKasir from './pages/LoginAplikasiKasir';
 import BuatAkunBaru from './pages/BuatAkunBaru';
 import TambahStok from './pages/TambahStok';
-import AddStock from './pages/AddStock';
 import LoginKasir from './pages/LoginKasir';
 import AkunToko from './pages/AkunToko';
 import BuatAkunToko from './pages/BuatAkunToko';
@@ -32,10 +31,10 @@ function App() {
         <Route path='/:idUser/stok-barang' element = {<StockBarang />} />
       <Route path='/:idUser/new-stok-barang' element = {<NewStokBarang />} />
       <Route path='/:idUser/edit-stok' element = {<EditStok />} />
-        <Route path='/add-stock' element = {<AddStock />} />
+        {/* <Route path='/add-stock' element = {<AddStock />} /> */}
 
-        <Route path='/list-barang' element={ <ListBarang/> }/>
-        <Route path='/tambah-barang' element={ <BuatTambahBarang/> }/>
+        <Route path='/:idUser/list-barang' element={ <ListBarang/> }/>
+        <Route path='/:idUser/tambah-barang' element={ <BuatTambahBarang/> }/>
         <Route path='/edit-barang' element={ <BuatEditBarang/> }/>
       </Routes>
     </>

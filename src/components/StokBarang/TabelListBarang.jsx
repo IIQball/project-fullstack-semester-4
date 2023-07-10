@@ -2,9 +2,11 @@ import React, {useState, useEffect} from "react"
 import axios from "axios"
 import BuatEditBarang from "../BuatEditBarang";
 import apis from "../../api/dataBarang";
+import { useParams } from "react-router-dom";
 
 
 const TabelListBarang = ({}) => {
+    const {idUser} = useParams();
     const[listbrg, setListbrg] = useState([]);
     const[editbrg, setEditbrg] = useState({});
     const[data, setData] = useState([]);

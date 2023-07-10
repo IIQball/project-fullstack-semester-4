@@ -26,7 +26,7 @@ const NewTabelStock = ({ dataStock, setNewData, setShow }) => {
                     >
                         <td className="px-6 py-4">{idx+1}</td>
                         <td className="px-6 py-4">
-                            <img src={`/src/img/img1.jpeg`}  className="w-20 h-20"/>
+                            <img src={data.url}  className="w-20 h-20"/>
                         </td>
                         <td className="px-6 py-4">{data.namaToko}</td>
                         <td className="px-6 py-4">{data.kodeBarang}</td>

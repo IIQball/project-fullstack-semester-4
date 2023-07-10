@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import apis from "../api/akunToko";
 
 
 const BuatAkunToko = () => {
-    const param = useParams();
+    const {idUser} = useParams();
 
     const [namaToko, setNamaToko] = useState("");
     const [username, setUsername] = useState("");
@@ -17,17 +16,16 @@ const BuatAkunToko = () => {
         e.preventDefault();
         try {
             let dataAkun = {
-                idUser : param.idUser,
                 namaToko : namaToko,
                 username : username,
                 password : password
             }
-            await apis.regAkunToko(dataAkun)
+            await apis.regAkunToko(idUser,dataAkun)
 
-            navigate("/akun-toko");
+            navigate(`/${idUser}/akun-toko`);
             alert("oke")
         } catch (error) {
-            console.log
+            console.log(error)
         }
     }
 
@@ -73,22 +71,7 @@ const BuatAkunToko = () => {
                             rounded-lg focus:ring-primary-600 focus:border-primary-600 w-80 h-12  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
                             dark:focus:ring-blue-500 dark:focus:border-blue-500" required
                             />
-                        </div>
-                        <div className="flex flex-row">
-                            <Link to="/akun-toko">
-                            <button type="submit" className=" w-full  text-white bg-red-700 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium 
-                            rounded-full text-md px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                            >
-                                Kembali
-                            </button>
-                            </Link>
-                            
-                            <button type="submit" className=" w-full  text-white bg-blue-700 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium 
-                            rounded-full text-md px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                            >
-                                Buat
-                            </button>
-                        </div>
+                        </div>                        
                         <div className="flex flex-row">
                             <Link to="/akuntoko">
                             <button type="button" className=" w-full  text-white bg-red-700 hover:bg-red-600 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium 

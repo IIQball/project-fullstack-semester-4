@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
 import apis from "../../api/stockBarang";
-import { useNavigate } from "react-router-dom";
 
 const EditDataStok = ({ idUser, newData, show, setShow }) => {
-    const navigation = useNavigate();
     const [newStok, setNewStok] = useState(0);
 
     const handleSubmit = async() => {
@@ -12,6 +10,7 @@ const EditDataStok = ({ idUser, newData, show, setShow }) => {
             "kodeBarang": newData.kodeBarang,
             "stok": newStok
         }
+        console.log(updateData);
         try{
             await apis.updateStok(idUser, updateData);
             alert("Data berhasil ditambah ");
@@ -61,8 +60,9 @@ const EditDataStok = ({ idUser, newData, show, setShow }) => {
             className="absolute bg-red-600 text-white text-2xl w-12 h-12 flex justify-center items-center rounded-full -top-6 -right-6 active:bg-red-800">
                 <p>x</p>
             </button>
-            <div className="w-full h-60 bg-cover bg-center bg-[url('/src/img/img1.jpeg')]">
-                </div>
+            {/* <div className={`w-full h-60 bg-cover bg-center bg-[url('${newData.url}')]`}>
+                </div> */}
+            <img src={newData.url} className="w-full aspect-square" />
                 <div className="p-5">
                 <h5 className="mb-2 text-lg text-center font-bold tracking-tight text-gray-900">{newData.namaBarang}</h5>
                 <table className="w-full">
