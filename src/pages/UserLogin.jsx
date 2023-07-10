@@ -19,11 +19,12 @@ const UserLogin = () => {
             const user = {username, password};
             try{
                 const response = await apis.login(user);
+                // console.log(response.data.idUser);
                 const cookies = document.cookie
                 console.log(cookies)
                 if (cookies) {
                     Cookies.set('userCookie', cookies, {sameSite: 'none', secure: true});
-                    navigate('/akun-toko')
+                    navigate(`/${response.data.idUser}/akun-toko`)
                 }
                 else {
                     alert('Login Gagal')

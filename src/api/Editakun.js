@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 const apis = {
-    getAkunToko : () => api.get('/toko'),
+    getAkunToko : (idUser) => api.get(`/${idUser}/toko`),
     editAkunToko : (dataAkun) => api.post("http://localhost:5000/update", dataAkun)
 }
 

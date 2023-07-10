@@ -1,23 +1,9 @@
 import { Link } from "react-router-dom";
 import TableAkunToko from "../components/TableAkunToko";
 import AdminLayout from "../components/layout/AdminLayout";
-// import Popup from "../components/awas"
 
 
 const AkunToko = () => {
-    const dataAkunToko =[
-        {
-            "namatoko" : "Toko A",
-            "username" : "toko_a",
-            "password" : "1234567"
-        },
-        {
-            "namatoko" : "Toko B",
-            "username" : "toko_b",
-            "password" : "12345678"
-        }
-
-    ]
     return(
         <>
             <AdminLayout>
@@ -32,7 +18,7 @@ const AkunToko = () => {
                         </Link>
                         
                     </div>
-                    <TableAkunToko dataAkunToko={dataAkunToko}/>
+                    <TableAkunToko />
                     
                 </div>
             </AdminLayout>
