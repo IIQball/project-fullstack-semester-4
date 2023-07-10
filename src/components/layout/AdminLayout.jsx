@@ -40,7 +40,7 @@ const AdminLayout = ({children}) => {
                         </a>
                         </li>
                         <li>
-                        <Link to={`/${idUser}/stok-barang`} className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <Link to={`/${idUser}/new-stok-barang`} className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
                             <img src='https://img.icons8.com/external-phatplus-solid-phatplus/64/EBEBEB/external-stock-shipping-phatplus-solid-phatplus.png'
                                 className='w-6 h-6'
                             />
