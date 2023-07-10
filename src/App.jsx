@@ -19,7 +19,7 @@ function App() {
     <>
       <Routes>
         <Route path='/:idUser/transaksi' element = {<Transaksi/>} />
-        <Route path='/akun-toko' element={ <AkunToko/> }/>
+        <Route path='/:idUser/akun-toko' element={ <AkunToko/> }/>
         <Route path='/user-login' element={ <UserLogin/> }/>
         <Route path='/login-aplikasi-kasir' element={ <LoginAplikasiKasir/> }/>
         <Route path='/buat-akun-baru' element={ <BuatAkunBaru/> }/>

@@ -3,19 +3,6 @@ import AdminLayout from "../components/layout/AdminLayout";
 import { Link } from "react-router-dom";
 
 const AkunToko = () => {
-    const dataAkunToko =[
-        {
-            "namatoko" : "Toko A",
-            "username" : "toko_a",
-            "password" : "1234567"
-        },
-        {
-            "namatoko" : "Toko B",
-            "username" : "toko_b",
-            "password" : "12345678"
-        }
-
-    ]
     return(
         <>
             <AdminLayout>
@@ -36,7 +23,7 @@ const AkunToko = () => {
                         </button>
                         </Link>
                     </div>
-                    <TableAkunToko dataAkunToko={dataAkunToko}/>
+                    <TableAkunToko />
                     
                 </div>
             </AdminLayout>
@@ -45,5 +32,4 @@ const AkunToko = () => {
         </>
     )
 }
-
 export default AkunToko;

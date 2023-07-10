@@ -2,19 +2,21 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PopupEdit from "./PopupEdit";
 import apis from "../api/Editakun";
+import { useParams } from "react-router-dom";
 
 const TableAkunToko = ()=> {
     // const[listtokoo, setListtoko] = useState([]);
+    const {idUser} = useParams();
+    console.log(idUser)
     const [data, setData] = useState([])
     const [editAkun, setEditAkun] = useState({});
 
     useEffect(()=> {
-        // getListToko();
-        // getListTokoId(idToko)
+
 
         const data = async()=>{
             try {
-                const respon = await apis.getAkunToko()
+                const respon = await apis.getAkunToko(idUser)
                 setData(respon.data)
                 console.log(respon.data)
             } catch (error) {
