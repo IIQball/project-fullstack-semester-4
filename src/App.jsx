@@ -12,6 +12,10 @@ import LoginKasir from './pages/LoginKasir';
 import AkunToko from './pages/AkunToko';
 import BuatAkunToko from './pages/BuatAkunToko';
 
+import BuatTambahBarang from './components/BuatTambahBarang'
+import BuatEditBarang from './components/BuatEditBarang'
+import ListBarang from './pages/ListBarang'
+
 function App() {
   return (
     <>
@@ -25,6 +29,10 @@ function App() {
         <Route path='/tambah-stok' element={ <TambahStok/> }/>
         <Route path='/:idUser/stok-barang' element = {<StockBarang />} />
         <Route path='/add-stock' element = {<AddStock />} />
+
+        <Route path='/list-barang' element={ <ListBarang/> }/>
+        <Route path='/tambah-barang' element={ <BuatTambahBarang/> }/>
+        <Route path='/edit-barang' element={ <BuatEditBarang/> }/>
       </Routes>
     </>
   )

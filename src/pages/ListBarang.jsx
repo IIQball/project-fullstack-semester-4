@@ -1,18 +1,24 @@
-import Header from "../components/Header"
-import Sidebar from "../components/Sidebar"
-import Content from "../components/Content"
-import ContentListBarang from "../components/ContentListBarang"
+import AdminLayout from "../components/layout/AdminLayout"
+import TabelListBarang from "../components/StokBarang/TabelListBarang"
+import { Link } from "react-router-dom"
+
 
 const ListBarang = () => {
     return(
         <>
-            <div className="relative min-h-screen grid grid-cols-12 grid-rows-6 box-border">
-                <Header title="list Barang"/>
-                <Sidebar/>
-                <ContentListBarang />
-            </div>
+            <AdminLayout>
+                <div className="flex justify-end my-10">
+                    <Link to="/tambah-barang">
+                        <button
+                            className="py-4 px-4 bg-cyan-900 hover:bg-cyan-800 text-gray-200 hover:text-white font-medium rounded-md"
+                        >
+                            + BARANG BARU
+                        </button>
+                    </Link>
+                </div>
+                <TabelListBarang/>
+            </AdminLayout>
         </>
     )
 }
-
-export default ListBarang;
+export default ListBarang
