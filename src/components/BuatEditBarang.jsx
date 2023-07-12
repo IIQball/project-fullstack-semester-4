@@ -48,7 +48,7 @@ const BuatEditBarang = ({editBrg, setData}) => {
     const hideForm = () => {
         const close = document.querySelector(".input-edit");
         close.classList.add("hidden");
-    }
+    };
 
     return(
         <div className= "input-edit hidden fixed top-0 left-0 w-full h-full bg-gambar2 bg-no-repeat bg-center bg-cover">

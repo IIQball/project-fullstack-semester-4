@@ -7,7 +7,7 @@ const api = axios.create({
 
 const apis = {
     regAkunToko : (idUser,dataAkun) => api.post(`/${idUser}/akuntoko/register`, dataAkun),
-    login : (dataAkun) => api.post("/akuntoko/login", dataAkun)
+    login : (idUser,dataAkun) => api.post(`/${idUser}/akuntoko/login`, dataAkun)
 }
 
 export default apis;

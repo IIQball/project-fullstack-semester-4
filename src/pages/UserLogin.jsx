@@ -19,7 +19,7 @@ const UserLogin = () => {
             const user = {username, password};
             try{
                 const response = await apis.login(user);
-                // console.log(response.data.idUser);
+                console.log(response.data);
                 const cookies = document.cookie
                 console.log(cookies)
                 if (cookies) {

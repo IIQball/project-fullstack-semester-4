@@ -48,12 +48,12 @@ const AdminLayout = ({children}) => {
                         </Link>
                         </li>
                         <li>
-                        <a href="#" className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <Link to={`/${idUser}/transaksi`} className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
                             <img src='https://img.icons8.com/external-itim2101-fill-itim2101/64/EBEBEB/external-payment-currency-itim2101-fill-itim2101-4.png'
                                 className='w-6 h-6'
                             />
                             <span className="flex-1 ml-3 whitespace-nowrap">Data Transaksi</span>
-                        </a>
+                        </Link>
                         </li>
                     </ul>
                     <div className='fixed bottom-0'>

@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 const apis = {
-    regDataBrg : () => api.get("http://localhost:5000/barang"),
+    regDataBrg : (idUser) => api.get(`http://localhost:5000/${idUser}/barang`),
     editBrg : (dataBrg) => api.post("http://localhost:5000/barang", dataBrg)
 }
 

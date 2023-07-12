@@ -17,20 +17,22 @@ const LoginAplikasiKasir = () => {
             alert('Data Tidak Boleh Kosong')
         }
         else {
-            const kasir = {username, password};
+            const dataAkun = {username, password};
             try{
-                const response = await apis.login(kasir);
+                const response = await apis.login(idUser,dataAkun);
                 const cookies = document.cookie
                 console.log(cookies)
                 if (cookies) {
+                    alert('Login Berhasil')
                     Cookies.set('kasirCookie', cookies, {sameSite: 'none', secure: true});
-                    navigate('/1/transaksi')
+                    navigate(`/${idUser}/transaksi`)
                 }
                 else {
                     alert('Login Gagal')
                 }
             } catch (error) {
                 console.error(error);
+                alert('GAGALLLLL')
             }
         }
     }

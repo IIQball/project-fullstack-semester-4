@@ -65,13 +65,13 @@ const Home = () => {
   return (
     <div className="bg-slate-200 p-5">
       <div className="flex justify-between">
-        <div className="border-2 border-gray-200 w-[750px] grid grid-cols-4 overflow-hidden gap-3">
+        <div className="border-2 w-[960px] flex justify-around flex-wrap overflow-hidden">
           {dataStock.map((data) => (
-              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
+              <div className="bg-white border border-gray-200 rounded-lg shadow">
                 <a href="#">
-                  <img className="p-8 rounded-t-lg" src={`/src/img/img1.jpeg`}  />
+                  <img className="p-8 rounded-t-lg bg-white border border-gray-200 h-[200px]" src={data.url}  />
                 </a>
-                <div className="px-5 pb-5">
+                <div className="flex flex-col rounded-t-lg mt-10 p-3 border">
                   <a href="#">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900">{data.namaBarang}</h5>
                   </a>
@@ -84,19 +84,17 @@ const Home = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-gray-900">Stok:{data.stok}</span>
                   </div>
-                  <div className="flex items-center justify-end mt-5">
-                    <button
-                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+                  <button
+                      className="mt-10 text-white bg-blue-700 self-end hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 items-end"
                       onClick={() => handleClick(data)}
                     >
                       Add to cart
                     </button>
-                  </div>
                 </div>
               </div>
           ))}
         </div>
-        <div className="border-2 border-gray-200 w-[550px]">
+        <div className="border-2 border-gray-200 w-[800px]">
           <Cart items={items} setItems={setItems} dataStock={dataStock} setDataStock={setDataStock} idUser={idUser}/>
         </div>
       </div>

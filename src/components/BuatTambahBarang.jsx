@@ -17,7 +17,6 @@ const BuatTambahBarang = () => {
 
     const Kirim = async(e) => {
         e.preventDefault();
-        //  mencegah perilaku default
 
         if (!kodeBarang || !namaBarang || !harga  || !gambar || !ukuran) {
         alert("Data Masih Ada Yang Kosong")
@@ -48,10 +47,8 @@ const BuatTambahBarang = () => {
     };
 
     const loadImage = (e) => {
-        // fungsi yang digunakan untuk mengambil gambar melalui input file
         const image = e.target.files[0];
         setGambar(image);
-        // gambar disimpan dalam state gambar melalui setgambar
     };
 
     const fetchData = async() => {
@@ -88,7 +85,6 @@ const BuatTambahBarang = () => {
                             </label>
                             <input type="text" name="text" id="text" 
                             value={kodeBarang} onChange={(e) => setKode(e.target.value)}
-                            //value digunakan untuk mengambil nilai terbaru
                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm 
                             rounded-lg focus:ring-primary-600 focus:border-primary-600 w-80 h-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
                             placeholder="kode barang" required=""/>
@@ -130,7 +126,6 @@ const BuatTambahBarang = () => {
                                 Gambar
                             </label>
                             <input type="file"
-                            // value={gambar} onChange={(e) => setGambar(e.target.value)}
                             onChange = {loadImage}
                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm pt-1.5
                             rounded-lg focus:ring-primary-600 focus:border-primary-600 w-80 h-10  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""/>

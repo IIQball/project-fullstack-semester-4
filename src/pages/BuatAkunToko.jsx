@@ -73,7 +73,7 @@ const BuatAkunToko = () => {
                             />
                         </div>                        
                         <div className="flex flex-row">
-                            <Link to="/akuntoko">
+                            <Link to={`/${idUser}/akun-toko`}>
                             <button type="button" className=" w-full  text-white bg-red-700 hover:bg-red-600 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium 
                             rounded-full text-md px-12 py-2.5 mt-7 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                 Kembali 
